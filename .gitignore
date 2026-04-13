@@ -1,0 +1,18 @@
+# Real network captures — NEVER commit these
+data/*.pcap
+data/*.xml
+data/*.json
+
+# Generated reports may contain real IPs
+reports/*.pdf
+
+# Python
+venv/
+_pycache_/
+*.pyc
+.env
+
+# Editor
+.vscode/
+.idea/
+*.swp

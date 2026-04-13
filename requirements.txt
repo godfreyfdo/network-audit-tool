@@ -1,0 +1,15 @@
+appdirs==1.4.4
+defusedxml==0.7.1
+fonttools==4.62.1
+fpdf2==2.8.7
+lxml==6.0.4
+markdown-it-py==4.0.0
+mdurl==0.1.2
+netifaces==0.11.0
+packaging==26.0
+pillow==12.2.0
+Pygments==2.20.0
+pyshark==0.6
+python-nmap==0.7.1
+rich==15.0.0
+termcolor==3.3.0

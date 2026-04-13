@@ -1,0 +1,41 @@
+# config.py — central settings for network-audit-tool
+
+# Find YOUR range with: ip route
+TARGET_NETWORK = "192.168.1.0/24"
+
+# Traffic capture duration in seconds
+CAPTURE_DURATION = 120
+
+# Output directories
+DATA_DIR    = "data/"
+REPORTS_DIR = "reports/"
+
+# Ports flagged as risky if found open
+RISKY_PORTS = {
+    21:   "FTP — plaintext file transfer",
+    23:   "Telnet — plaintext remote access",
+    80:   "HTTP — unencrypted web traffic",
+    445:  "SMB — Windows file sharing, exploit target",
+    3389: "RDP — Remote Desktop, brute-force target",
+    5900: "VNC — often unencrypted remote desktop",
+    8080: "HTTP-alt — often misconfigured admin panel",
+}
+
+# CVSS v3.1 scores per finding type
+SEVERITY_MAP = {
+    "telnet_detected":  {"score": 9.1, "label": "Critical"},
+    "ftp_detected":     {"score": 7.5, "label": "High"},
+    "rdp_open":         {"score": 8.8, "label": "High"},
+    "http_plaintext":   {"score": 5.3, "label": "Medium"},
+    "smb_open":         {"score": 7.5, "label": "High"},
+    "vnc_open":         {"score": 8.0, "label": "High"},
+    "arp_anomaly":      {"score": 8.2, "label": "High"},
+    "no_reverse_dns":   {"score": 2.5, "label": "Low"},
+    "risky_port_open":  {"score": 5.0, "label": "Medium"},
+}
+
+# PDF report metadata
+ASSESSOR_NAME  = "Johannez"
+REPORT_TITLE   = "Network Security Audit Report"
+CLASSIFICATION = "Confidential"
+
